@@ -1,6 +1,7 @@
 vendor
-
+essence.iml
 .buildpath
 .settings
 .project
+.idea
 
