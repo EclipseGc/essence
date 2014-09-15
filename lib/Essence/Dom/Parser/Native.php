@@ -56,19 +56,21 @@ class Native implements Parser {
 	}
 
 
-
-	/**
-	 *	Builds and returns a DomDocument from the given HTML source.
-	 *
-	 *	@param string $html HTML source.
-	 *	@return DomDocument DomDocument.
-	 */
+  /**
+   *  Builds and returns a DomDocument from the given HTML source.
+   *
+   * @param string $html HTML source.
+   * @throws \Essence\Exception
+   *
+   * @return DomDocument DomDocument.
+   */
 
 	protected function _document( $html ) {
 
 		$reporting = error_reporting( 0 );
 		$html = $this->fixCharset( $html );
-		$Document = DomDocument::loadHTML( $html );
+		$Document = new DomDocument();
+    $Document->loadHTML( $html );
 		error_reporting( $reporting );
 
 		if ( $Document === false ) {

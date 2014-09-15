@@ -87,14 +87,14 @@ class OEmbed extends Provider {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\Http\Client $Http HTTP client.
-	 *	@param Essence\Dom\Parser $Dom DOM parser.
-	 *	@param Essence\Log\Logger $Log Logger.
-	 *	@param Essence\Log\Preparator $Preparator Preparator.
+	 *	@param \Essence\Http\Client $Http HTTP client.
+	 *	@param \Essence\Dom\Parser $Dom DOM parser.
+	 *	@param \Essence\Log\Logger $Log Logger.
+	 *	@param \Essence\Media\Preparator $Preparator Preparator.
 	 */
 
 	public function __construct(
-		HttpClient $Http,
+    HttpClient $Http,
 		DomParser $Dom,
 		Logger $Log,
 		Preparator $Preparator = null
@@ -106,13 +106,13 @@ class OEmbed extends Provider {
 	}
 
 
-
-	/**
-	 *	Strips arguments and anchors from the given URL.
-	 *
-	 *	@param string $url Url to prepare.
-	 *	@return string Prepared url.
-	 */
+  /**
+   *  Strips arguments and anchors from the given URL.
+   *
+   * @param string $url Url to prepare.
+   * @param array $options
+   * @return string Prepared url.
+   */
 
 	public static function prepareUrl( $url, array $options = [ ]) {
 
@@ -154,7 +154,7 @@ class OEmbed extends Provider {
 	 *
 	 *	@note If no endpoint was specified in the configuration, the page at
 	 *		the given URL will be parsed to find one.
-	 *	@throws Essence\Exception If the parsed page doesn't provide any endpoint.
+	 *	@throws \Essence\Exception If the parsed page doesn't provide any endpoint.
 	 */
 
 	protected function _embed( $url, array $options ) {
@@ -230,14 +230,14 @@ class OEmbed extends Provider {
 	}
 
 
-
-	/**
-	 *	Fetches embed information from the given endpoint.
-	 *
-	 *	@param string $endpoint Endpoint to fetch informations from.
-	 *	@param string $format Response format.
-	 *	@return Media Embed informations.
-	 */
+  /**
+   *  Fetches embed information from the given endpoint.
+   *
+   * @param string $endpoint Endpoint to fetch informations from.
+   * @param string $format Response format.
+   * @throws \Essence\Exception
+   * @return \Essence\Media Embed informations.
+   */
 
 	protected function _embedEndpoint( $endpoint, $format ) {
 

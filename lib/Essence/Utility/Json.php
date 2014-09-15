@@ -35,13 +35,13 @@ class Json {
 	];
 
 
-
-	/**
-	 *	Parses a JSON document and returns an array of data.
-	 *
-	 *	@param string $json JSON document.
-	 *	@return array Data.
-	 */
+  /**
+   *  Parses a JSON document and returns an array of data.
+   *
+   * @param string $json JSON document.
+   * @throws \Essence\Exception
+   * @return array Data.
+   */
 
 	public static function parse( $json ) {
 

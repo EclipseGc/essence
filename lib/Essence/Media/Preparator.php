@@ -34,7 +34,7 @@ class Preparator {
 	 *	Builds an HTML code from the given media's properties to fill its
 	 *	'html' property.
 	 *
-	 *	@param Essence\Media $Media A reference to the Media.
+	 *	@param \Essence\Media $Media A reference to the Media.
 	 *	@param array $options Options.
 	 */
 

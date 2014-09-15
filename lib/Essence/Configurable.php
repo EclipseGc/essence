@@ -23,7 +23,7 @@ trait Configurable {
 	 *	@var array
 	 */
 
-	// protected $_properties = array( );
+	protected $_properties = array( );
 
 
 
@@ -64,7 +64,8 @@ trait Configurable {
 	 *	Returns if there is any value for the given property.
 	 *
 	 *	@param string $property Property name.
-	 *	@param boolean True if the property exists, otherwise false.
+   *
+	 *	@return boolean True if the property exists, otherwise false.
 	 */
 
 	public function has( $property ) {
@@ -102,6 +103,7 @@ trait Configurable {
 	public function set( $property, $value ) {
 
 		$this->_properties[ $property ] = $value;
+    return $this;
 	}
 
 
@@ -111,6 +113,8 @@ trait Configurable {
 	 *
 	 *	@param string $property Property name.
 	 *	@param string $default Default value.
+   *
+   *  @return $this
 	 */
 
 	public function setDefault( $property, $default ) {
@@ -118,6 +122,7 @@ trait Configurable {
 		if ( !$this->has( $property )) {
 			$this->set( $property, $default );
 		}
+    return $this;
 	}
 
 
@@ -126,12 +131,15 @@ trait Configurable {
 	 *	Sets default values.
 	 *
 	 *	@see setDefault( )
-	 *	@param string $properties Default properties.
+	 *	@param array $properties Default properties.
+   *
+   *  @return $this
 	 */
 
-	public function setDefaults( $properties ) {
+	public function setDefaults( array $properties = array() ) {
 
 		$this->_properties += $properties;
+    return $this;
 	}
 
 
@@ -153,11 +161,14 @@ trait Configurable {
 	 *	Sets the entire set of properties.
 	 *
 	 *	@param array $properties Properties to set.
+   *
+   *  @return $this
 	 */
 
 	public function setProperties( array $properties ) {
 
 		$this->_properties = $properties;
+    return $this;
 	}
 
 
@@ -166,10 +177,13 @@ trait Configurable {
 	 *	Merges the given properties with the current ones.
 	 *
 	 *	@param array $properties Properties to merge.
+   *
+   *  @return $this;
 	 */
 
 	public function configure( array $properties ) {
 
 		$this->_properties = array_merge( $this->_properties, $properties );
+    return $this;
 	}
 }

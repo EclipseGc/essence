@@ -35,7 +35,7 @@ class Essence {
 	/**
 	 *	A collection of providers to query.
 	 *
-	 *	@var Essence\ProviderCollection
+	 *	@var \Essence\Provider\Collection
 	 */
 
 	protected $_Collection = null;
@@ -45,7 +45,7 @@ class Essence {
 	/**
 	 *	Internal HTTP client.
 	 *
-	 *	@var Essence\Http\Client
+	 *	@var \Essence\Http\Client
 	 */
 
 	protected $_Http = null;
@@ -55,7 +55,7 @@ class Essence {
 	/**
 	 *	Internal DOM parser.
 	 *
-	 *	@var Essence\Dom\Parser
+	 *	@var \Essence\Dom\Parser
 	 */
 
 	protected $_Dom = null;
@@ -65,7 +65,7 @@ class Essence {
 	/**
 	 *	Internal Logger.
 	 *
-	 *	@var Essence\Log\Logger
+	 *	@var \Essence\Log\Logger
 	 */
 
 	protected $_Logger = null;
@@ -101,11 +101,11 @@ class Essence {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\ProviderCollection $Collection Provider collection.
-	 *	@param Essence\Cache\Engine $Cache Cache engine.
-	 *	@param Essence\Http\Client $Http HTTP client.
-	 *	@param Essence\Dom\Parser $Cache DOM parser.
-	 *	@param Essence\Log\Logger $Logger Logger.
+	 *	@param \Essence\Provider\Collection $Collection Provider collection.
+	 *	@param \Essence\Cache\Engine $Cache Cache engine.
+	 *	@param \Essence\Http\Client $Http HTTP client.
+	 *	@param \Essence\Dom\Parser $Cache DOM parser.
+	 *	@param \Essence\Log\Logger $Logger Logger.
 	 */
 
 	public function __construct(
@@ -128,7 +128,7 @@ class Essence {
 	 *	Builds a fully configured instance of Essence.
 	 *
 	 *	@param array $configuration Dependency injection configuration.
-	 *	@return Essence\Essence Essence instance.
+	 *	@return \Essence\Essence Essence instance.
 	 */
 
 	public static function instance( array $configuration = [ ]) {
@@ -242,7 +242,7 @@ class Essence {
 	 *
 	 *	@param string $url URL to fetch informations from.
 	 *	@param array $options Custom options to be interpreted by a provider.
-	 *	@return Essence\Media Embed informations.
+	 *	@return \Essence\Media Embed informations.
 	 */
 
 	public function embed( $url, array $options = [ ]) {
@@ -258,7 +258,7 @@ class Essence {
 	 *	@see embed( )
 	 *	@param string $url URL to fetch informations from.
 	 *	@param array $options Custom options to be interpreted by a provider.
-	 *	@return Essence\Media Embed informations.
+	 *	@return \Essence\Media Embed informations.
 	 */
 
 	protected function _embed( $url, array $options ) {
@@ -267,7 +267,10 @@ class Essence {
 		$Media = null;
 
 		foreach ( $providers as $Provider ) {
-			if ( $Media = $Provider->embed( $url, $options )) {
+      /**
+       * @var \Essence\Provider $Provider
+       */
+      if ( $Media = $Provider->embed( $url, $options )) {
 				break;
 			}
 		}

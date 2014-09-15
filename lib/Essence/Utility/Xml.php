@@ -21,12 +21,13 @@ use SimpleXmlIterator;
 
 class Xml {
 
-	/**
-	 *	Parses an XML document and returns an array of data.
-	 *
-	 *	@param string $xml XML document.
-	 *	@return array Data.
-	 */
+  /**
+   *  Parses an XML document and returns an array of data.
+   *
+   * @param string $xml XML document.
+   * @throws \Essence\Exception
+   * @return array Data.
+   */
 
 	public static function parse( $xml ) {
 

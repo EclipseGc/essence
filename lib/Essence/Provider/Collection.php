@@ -28,7 +28,7 @@ class Collection {
 	/**
 	 *	Dependency injection container.
 	 *
-	 *	@var Essence\Di\Container
+	 *	@var \Essence\Di\Container
 	 */
 
 	protected $_Container = null;
@@ -66,7 +66,7 @@ class Collection {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\Di\Container $Container Dependency injection container
+	 *	@param \Essence\Di\Container $Container Dependency injection container
 	 *		used to build providers.
 	 */
 
@@ -80,7 +80,7 @@ class Collection {
 	/**
 	 *	Loads configuration from an array or a file.
 	 *
-	 *	@throws Essence\Exception If the configuration is not an array.
+	 *	@throws \Essence\Exception If the configuration is not an array.
 	 *	@param array|string $config A configuration array, or a configuration
 	 *		file returning such an array.
 	 */
@@ -127,7 +127,7 @@ class Collection {
 	 *
 	 *	@todo Use PHP generators to yield providers.
 	 *	@param string $url An url which may be embedded.
-	 *	@return array An array of Essence\Provider.
+	 *	@return array An array of \Essence\Provider.
 	 */
 
 	public function providers( $url ) {
@@ -150,7 +150,7 @@ class Collection {
 	 *
 	 *	@param string|callable $filter Regex or callback to filter URL.
 	 *	@param string $url URL to filter.
-	 *	@return Whether the URL matches the filter or not.
+	 *	@return boolean Whether the URL matches the filter or not.
 	 */
 
 	protected function _matches( $filter, $url ) {
@@ -167,7 +167,7 @@ class Collection {
 	 *
 	 *	@param string $name Name.
 	 *	@param string $config Configuration.
-	 *	@return Provider Instance.
+	 *	@return \Essence\Provider Instance.
 	 */
 
 	protected function _provider( $name, $config ) {

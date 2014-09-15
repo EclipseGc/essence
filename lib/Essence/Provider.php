@@ -8,7 +8,6 @@
 namespace Essence;
 
 use Essence\Configurable;
-use Essence\Exception;
 use Essence\Media;
 use Essence\Media\Preparator;
 use Essence\Log\Logger;
@@ -30,7 +29,7 @@ abstract class Provider {
 	/**
 	 *	Internal logger.
 	 *
-	 *	@var Essence\Log\Logger
+	 *	@var \Essence\Log\Logger
 	 */
 
 	protected $_Logger = null;
@@ -40,7 +39,7 @@ abstract class Provider {
 	/**
 	 *	Media preparator.
 	 *
-	 *	@var Essence\Media\Preparator
+	 *	@var \Essence\Media\Preparator
 	 */
 
 	protected $_Preparator = null;
@@ -66,8 +65,8 @@ abstract class Provider {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\Log\Logger $Logger Logger.
-	 *	@param Essence\Log\Preparator $Preparator Preparator.
+	 *	@param \Essence\Log\Logger $Logger Logger.
+	 *	@param \Essence\Media\Preparator $Preparator Preparator.
 	 */
 
 	public function __construct( Logger $Logger, Preparator $Preparator = null ) {
@@ -83,7 +82,7 @@ abstract class Provider {
 	 *
 	 *	@param string $url URL to fetch informations from.
 	 *	@param array $options Custom options to be interpreted by the provider.
-	 *	@return Media|null Embed informations, or null if nothing could be
+	 *	@return \Essence\Media|null Embed informations, or null if nothing could be
 	 *		fetched.
 	 */
 
@@ -120,8 +119,8 @@ abstract class Provider {
 	 *
 	 *	@param string $url URL to fetch informations from.
 	 *	@param array $options Custom options to be interpreted by the provider.
-	 *	@return Media Embed informations.
-	 *	@throws Essence\Exception
+	 *	@return \Essence\Media Embed informations.
+	 *	@throws \Essence\Exception
 	 */
 
 	abstract protected function _embed( $url, array $options );

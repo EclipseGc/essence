@@ -19,12 +19,12 @@ use Exception as NativeException;
 
 class Exception extends NativeException {
 
-	/**
-	 *	Wraps a native PHP exception.
-	 *
-	 *	@param NativeException Native exception.
-	 *	@return Exception Essence exception.
-	 */
+  /**
+   *  Wraps a native PHP exception.
+   *
+   * @param \Exception $Exception
+   * @return Exception Essence exception.
+   */
 
 	public static function wrap( NativeException $Exception ) {
 

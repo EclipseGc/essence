@@ -19,16 +19,17 @@ use Essence\Provider\OEmbed;
 
 class Vimeo extends OEmbed {
 
-	/**
-	 *	Refactors URLs like these:
-	 *	- http://player.vimeo.com/video/20830433
-	 *
-	 *	in such form:
-	 *	- http://www.vimeo.com/20830433
-	 *
-	 *	@param string $url Url to prepare.
-	 *	@return string Prepared url.
-	 */
+  /**
+   *  Refactors URLs like these:
+   *  - http://player.vimeo.com/video/20830433
+   *
+   *  in such form:
+   *  - http://www.vimeo.com/20830433
+   *
+   * @param string $url Url to prepare.
+   * @param array $options
+   * @return string Prepared url.
+   */
 
 	public static function prepareUrl( $url, array $options = [ ]) {
 

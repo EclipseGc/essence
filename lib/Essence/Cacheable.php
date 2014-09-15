@@ -20,7 +20,7 @@ trait Cacheable {
 	/**
 	 *	Internal cache engine.
 	 *
-	 *	@var Essence\Cache\Engine
+	 *	@var \Essence\Cache\Engine
 	 */
 
 	protected $_Cache = null;

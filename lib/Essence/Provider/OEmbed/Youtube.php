@@ -19,19 +19,20 @@ use Essence\Provider\OEmbed;
 
 class Youtube extends OEmbed {
 
-	/**
-	 *	Refactors URLs like these:
-	 *	- http://www.youtube.com/watch?v=oHg5SJYRHA0&noise=noise
-	 *	- http://www.youtube.com/v/oHg5SJYRHA0
-	 *	- http://www.youtube.com/embed/oHg5SJYRHA0
-	 *	- http://youtu.be/oHg5SJYRHA0
-	 *
-	 *	in such form:
-	 *	- http://www.youtube.com/watch?v=oHg5SJYRHA0
-	 *
-	 *	@param string $url Url to prepare.
-	 *	@return string Prepared url.
-	 */
+  /**
+   *  Refactors URLs like these:
+   *  - http://www.youtube.com/watch?v=oHg5SJYRHA0&noise=noise
+   *  - http://www.youtube.com/v/oHg5SJYRHA0
+   *  - http://www.youtube.com/embed/oHg5SJYRHA0
+   *  - http://youtu.be/oHg5SJYRHA0
+   *
+   *  in such form:
+   *  - http://www.youtube.com/watch?v=oHg5SJYRHA0
+   *
+   * @param string $url Url to prepare.
+   * @param array $options
+   * @return string Prepared url.
+   */
 
 	public static function prepareUrl( $url, array $options = [ ]) {
 
